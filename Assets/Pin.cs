@@ -17,10 +17,11 @@ public class Pin : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.tag == "Rotator") {
 			transform.SetParent(col.transform);
-			// speed up
+			// idea: speed up on hit
 			// col.GetComponent<Rotator>().speed += 50;
-			// opposite direction
+			// idea: opposite direction on hit
 			// col.GetComponent<Rotator>().speed *= -1;
+			Score.PinCount++;
 			isPinned = true;
 		} else if (col.tag == "Pin") {
 			// END GAME
